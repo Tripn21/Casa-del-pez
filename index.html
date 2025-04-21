@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>La Casa del Pez y +</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS para el mapa -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
   <header>
@@ -16,6 +19,7 @@
       <a href="#">Peceras</a>
       <a href="#">Mantenimiento</a>
       <a href="#">Contacto</a>
+      <a href="grooming.html">Grooming</a> <!-- Nuevo enlace -->
     </nav>
   </header>
 
@@ -24,28 +28,61 @@
     <p>Encuentra todo lo que necesitas para tu amigo especial en un solo lugar.</p>
   </section>
 
-  <section class="categorias-grandes">
-    <div class="categoria-grande">
-      <img src="imagenes/pez1.jpg" alt="Peces">
-      <h2>Peces</h2>
-      <a href="peces.html">Ver catálogo</a>
-    </div>
+  <section class="categorias-circulares">
+    <a href="peces.html" class="categoria-circular">
+      <div class="circulo-imagen">
+        <img src="imagenes/pez1.jpg" alt="Peces">
+      </div>
+      <p>Peces</p>
+    </a>
+  
+    <a href="aves.html" class="categoria-circular">
+      <div class="circulo-imagen">
+        <img src="imagenes/ave1.jpg" alt="Aves">
+      </div>
+      <p>Aves</p>
+    </a>
+  
+    <a href="Accesorios.html" class="categoria-circular">
+      <div class="circulo-imagen">
+        <img src="imagenes/perro2.jpg" alt="Accesorios">
+      </div>
+      <p>Accesorios</p>
+    </a>
+  
+    <a href="grooming.html" class="categoria-circular">
+      <div class="circulo-imagen">
+        <img src="imagenes/grooming1.jpg" alt="Grooming">
+      </div>
+      <p>Grooming</p>
+    </a>
+  </section>
+  
 
-    <div class="categoria-grande">
-      <img src="imagenes/ave1.jpg" alt="Aves">
-      <h2>Aves</h2>
-      <a href="aves.html">Ver catálogo</a>
-    </div>
-
-    <div class="categoria-grande">
-      <img src="imagenes/perro2.jpg" alt="Perros">
-      <h2>Perros</h2>
-      <a href="Accesorios.html">Ver catálogo</a>
-    </div>
+  <!-- Sección Ubicación con mapa -->
+  <section class="ubicacion">
+    <h2>¿Dónde estamos ubicados?</h2>
+    <div id="map" style="height: 400px;"></div>
   </section>
 
   <footer>
     <p>© 2025 La Casa del Pez y +. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Leaflet JS para el mapa -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Inicializar el mapa -->
+  <script>
+    var map = L.map('map').setView([13.6308183, -86.4763497], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([13.6308183, -86.4763497]).addTo(map)
+      .bindPopup('<b>La Casa del Pez y +</b><br>¡Visítanos!')
+      .openPopup();
+  </script>
 </body>
 </html>
