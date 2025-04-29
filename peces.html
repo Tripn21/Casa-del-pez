@@ -56,7 +56,7 @@
       font-size: 14px;
     }
 
-    .precio {
+    .Estado {
       font-weight: bold;
       color: #28a745;
     }
@@ -65,27 +65,88 @@
 <body>
   <h1>Catálogo de Peces</h1>
   <div class="galeria">
-    <!-- Tarjetas de Peces con los datos completos -->
 
-    <div class="tarjeta">
-      <img src="imagenes/pez1.jpg" alt="Pez Betta">
-      <h3>Pez Betta</h3>
-      <p><em>Betta splendens</em></p>
-      <p class="precio">Precio: C$95</p>
-      <p><strong>Origen:</strong> Sudeste Asiático</p>
-      <p><strong>Hábitat:</strong> Arrozales y aguas lentas</p>
-      <p><strong>Género:</strong> Betta</p>
-      <p><strong>Familia:</strong> Osphronemidae</p>
-      <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-      <p><strong>Descriptor:</strong> Regan</p>
-      <p><strong>Año de descripción:</strong> 1910</p>
+    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
+      <!-- Cara frontal -->
+      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
+        <img src="imagenes/pez1.jpg" alt="Imagen del pez" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
+      </div>
+    
+      <!-- Cara trasera -->
+      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
+        <h3 style="text-align:center; color:#0099cc;">Pez Betta</h3>
+        <em>Betta splendens</em><br><br>
+        <strong>Estado:</strong> Disponible<br>
+        <strong>Origen:</strong> Sudeste Asiático<br>
+        <strong>Hábitat:</strong> Arrozales y aguas lentas<br>
+        <strong>Género:</strong> Betta<br>
+        <strong>Familia:</strong> Osphronemidae<br>
+        <strong>Estatus IUCN:</strong> Vulnerable (VU)<br>
+        <strong>Descriptor:</strong> Regan<br>
+        <strong>Año:</strong> 1910<br><br>
+        <hr>
+        <h4>Información Climática</h4>
+        <strong>Tamaño:</strong> 6 cm<br>
+        <strong>Temperatura:</strong> 24-30 °C<br>
+        <strong>pH:</strong> 6.0 - 8.0<br>
+        <strong>GH:</strong> 5-20 dGH<br>
+        <strong>Corriente:</strong> Lenta
+      </div>
     </div>
+    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
+      <!-- Cara frontal -->
+      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
+        <img src="imagenes/pez2.jpg" alt="Guppy" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
+      </div>
+    
+      <!-- Cara trasera -->
+      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
+        <h3 style="text-align:center; color:#0099cc;">Guppy</h3>
+        <em>Poecilia reticulata</em><br><br>
+        <strong>Estado:</strong> Disponible<br>
+        <strong>Origen:</strong> América del Sur<br>
+        <strong>Hábitat:</strong> Ríos de aguas cálidas<br>
+        <strong>Género:</strong> Poecilia<br>
+        <strong>Familia:</strong> Poeciliidae<br>
+        <strong>Estatus IUCN:</strong> Preocupación menor (LC)<br>
+        <strong>Descriptor:</strong> W. Peters<br>
+        <strong>Año:</strong> 1859<br><br>
+        <hr>
+        <h4>Información Climática</h4>
+        <strong>Tamaño:</strong> 4-6 cm<br>
+        <strong>Temperatura:</strong> 22-28 °C<br>
+        <strong>pH:</strong> 6.8 - 7.8<br>
+        <strong>GH:</strong> 8 - 12 dGH<br>
+        <strong>Corriente:</strong> Suave
+      </div>
+    </div>
+    
+    <style>
+      .tarjeta.girada .frente {
+        transform: rotateY(-180deg) !important;
+      }
+    
+      .tarjeta.girada .trasera {
+        transform: rotateY(0deg) !important;
+      }
+    </style>
+    
+    
 
-    <div class="tarjeta">
+
+    <style>
+      .tarjeta.girada .frente {
+        transform: rotateY(-180deg) !important;
+      }
+    
+      .tarjeta.girada .trasera {
+        transform: rotateY(0deg) !important;
+      }
+    </style><div class="tarjeta">
       <img src="imagenes/pez2.jpg" alt="Guppy">
       <h3>Guppy</h3>
       <p><em>Poecilia reticulata</em></p>
-      <p class="precio">Precio: C$60</p>
+      <p class="Estado">Estado: Disponible</p>
       <p><strong>Origen:</strong> América del Sur</p>
       <p><strong>Hábitat:</strong> Ríos de aguas cálidas</p>
       <p><strong>Género:</strong> Poecilia</p>
@@ -93,43 +154,59 @@
       <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
       <p><strong>Descriptor:</strong> W. Peters</p>
       <p><strong>Año de descripción:</strong> 1859</p>
+      <p><strong>Tamaño:</strong> 4–6 cm</p>
+      <p><strong>Temperatura:</strong> 22–28 °C</p>
+      <p><strong>pH:</strong> 6.5–8.0</p>
+      <p><strong>GH:</strong> 8–12</p>
+      <p><strong>Corriente:</strong> Suave</p>
     </div>
-
+    
     <div class="tarjeta">
       <img src="imagenes/pez3.jpg" alt="Pez Ángel">
       <h3>Pez Ángel</h3>
       <p><em>Pterophyllum scalare</em></p>
-      <p class="precio">Precio: C$120</p>
+      <p class="Estado">Estado: Disponible</p>
       <p><strong>Origen:</strong> América del Sur</p>
-      <p><strong>Hábitat:</strong> Aguas de ríos y lagos en la cuenca del Amazonas</p>
+      <p><strong>Hábitat:</strong> Cuenca del Amazonas</p>
       <p><strong>Género:</strong> Pterophyllum</p>
       <p><strong>Familia:</strong> Cichlidae</p>
       <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
       <p><strong>Descriptor:</strong> Heckel</p>
       <p><strong>Año de descripción:</strong> 1840</p>
+      <p><strong>Tamaño:</strong> 10–15 cm</p>
+      <p><strong>Temperatura:</strong> 24–30 °C</p>
+      <p><strong>pH:</strong> 6.0–7.5</p>
+      <p><strong>GH:</strong> 3–10</p>
+      <p><strong>Corriente:</strong> Moderada</p>
     </div>
-
+    
     <div class="tarjeta">
       <img src="imagenes/pez4.jpg" alt="Pez Disco">
       <h3>Pez Disco</h3>
       <p><em>Symphysodon aequifasciatus</em></p>
-      <p class="precio">Precio: C$180</p>
+      <p class="Estado">Estado: Disponible</p>
       <p><strong>Origen:</strong> Cuenca amazónica</p>
-      <p><strong>Hábitat:</strong> Aguas cálidas y ácidas de ríos amazónicos</p>
+      <p><strong>Hábitat:</strong> Aguas cálidas y ácidas</p>
       <p><strong>Género:</strong> Symphysodon</p>
       <p><strong>Familia:</strong> Cichlidae</p>
       <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
       <p><strong>Descriptor:</strong> Pellegrin</p>
       <p><strong>Año de descripción:</strong> 1904</p>
+      <p><strong>Tamaño:</strong> 12–15 cm</p>
+      <p><strong>Temperatura:</strong> 27–30 °C</p>
+      <p><strong>pH:</strong> 5.0–7.0</p>
+      <p><strong>GH:</strong> 1–4</p>
+      <p><strong>Corriente:</strong> Lenta</p>
     </div>
+    
 
     <div class="tarjeta">
       <img src="imagenes/pez5.jpg" alt="Tetra Neón">
       <h3>Tetra Neón</h3>
       <p><em>Paracheirodon innesi</em></p>
-      <p class="precio">Precio: C$70</p>
-      <p><strong>Origen:</strong> América del Sur (ríos de Colombia y Brasil)</p>
-      <p><strong>Hábitat:</strong> Aguas tropicales cálidas y con poca corriente</p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Colombia y Brasil</p>
+      <p><strong>Hábitat:</strong> Aguas tropicales cálidas</p>
       <p><strong>Género:</strong> Paracheirodon</p>
       <p><strong>Familia:</strong> Characidae</p>
       <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
@@ -138,215 +215,301 @@
     </div>
 
     <div class="tarjeta">
-        <img src="imagenes/pez6.jpg" alt="Ciclido Oscar">
-        <h3>Ciclido Oscar</h3>
-        <p><em>Astronotus ocellatus</em></p>
-        <p class="precio">Precio: C$250</p>
-        <p><strong>Origen:</strong> Cuenca del Amazonas, América del Sur</p>
-        <p><strong>Hábitat:</strong> Aguas cálidas y profundas de ríos</p>
-        <p><strong>Género:</strong> Astronotus</p>
-        <p><strong>Familia:</strong> Cichlidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Cuvier</p>
-        <p><strong>Año de descripción:</strong> 1828</p>
+      <img src="imagenes/pez6.jpg" alt="Ciclido Oscar">
+      <h3>Ciclido Oscar</h3>
+      <p><em>Astronotus ocellatus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Cuenca del Amazonas</p>
+      <p><strong>Hábitat:</strong> Aguas cálidas y profundas</p>
+      <p><strong>Género:</strong> Astronotus</p>
+      <p><strong>Familia:</strong> Cichlidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Cuvier</p>
+      <p><strong>Año de descripción:</strong> 1828</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez7.jpg" alt="Pez Payaso">
+      <h3>Pez Payaso</h3>
+      <p><em>Amphiprioninae</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Pacífico e Índico</p>
+      <p><strong>Hábitat:</strong> Arrecifes de coral</p>
+      <p><strong>Género:</strong> Amphiprion</p>
+      <p><strong>Familia:</strong> Pomacentridae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Cuvier</p>
+      <p><strong>Año de descripción:</strong> 1830</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez8.jpg" alt="Tetra Cebra">
+      <h3>Tetra Cebra</h3>
+      <p><em>Danio rerio</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Subcontinente indio</p>
+      <p><strong>Hábitat:</strong> Aguas frescas y tranquilas</p>
+      <p><strong>Género:</strong> Danio</p>
+      <p><strong>Familia:</strong> Cyprinidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Hamilton</p>
+      <p><strong>Año de descripción:</strong> 1822</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez9.jpg" alt="Corydoras">
+      <h3>Corydoras</h3>
+      <p><em>Corydoras aeneus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> América del Sur</p>
+      <p><strong>Hábitat:</strong> Ríos y lagos de agua dulce</p>
+      <p><strong>Género:</strong> Corydoras</p>
+      <p><strong>Familia:</strong> Callichthyidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Lichtenstein</p>
+      <p><strong>Año de descripción:</strong> 1823</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez10.jpg" alt="Arowana">
+      <h3>Arowana</h3>
+      <p><em>Osteoglossum bicirrhosum</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Cuenca amazónica</p>
+      <p><strong>Hábitat:</strong> Aguas tropicales con corrientes lentas</p>
+      <p><strong>Género:</strong> Osteoglossum</p>
+      <p><strong>Familia:</strong> Osteoglossidae</p>
+      <p><strong>Estatus IUCN:</strong> Datos insuficientes (DD)</p>
+      <p><strong>Descriptor:</strong> Cuvier</p>
+      <p><strong>Año de descripción:</strong> 1829</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez11.jpg" alt="Pez Gato">
+      <h3>Pez Gato</h3>
+      <p><em>Pimelodus pictus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Amazonas y Orinoco</p>
+      <p><strong>Hábitat:</strong> Fondos arenosos</p>
+      <p><strong>Género:</strong> Pimelodus</p>
+      <p><strong>Familia:</strong> Pimelodidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Steindachner</p>
+      <p><strong>Año de descripción:</strong> 1876</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez12.jpg" alt="Molly">
+      <h3>Molly</h3>
+      <p><em>Poecilia sphenops</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> México y América Central</p>
+      <p><strong>Hábitat:</strong> Aguas dulces y salobres</p>
+      <p><strong>Género:</strong> Poecilia</p>
+      <p><strong>Familia:</strong> Poeciliidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Valenciennes</p>
+      <p><strong>Año de descripción:</strong> 1846</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez13.jpg" alt="Platy">
+      <h3>Platy</h3>
+      <p><em>Xiphophorus maculatus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> América Central</p>
+      <p><strong>Hábitat:</strong> Aguas cálidas y tranquilas</p>
+      <p><strong>Género:</strong> Xiphophorus</p>
+      <p><strong>Familia:</strong> Poeciliidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Günther</p>
+      <p><strong>Año de descripción:</strong> 1866</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez14.jpg" alt="Xipho o Cola de Espada">
+      <h3>Xipho</h3>
+      <p><em>Xiphophorus hellerii</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> América Central</p>
+      <p><strong>Hábitat:</strong> Arroyos y ríos</p>
+      <p><strong>Género:</strong> Xiphophorus</p>
+      <p><strong>Familia:</strong> Poeciliidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Heckel</p>
+      <p><strong>Año de descripción:</strong> 1848</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez15.jpg" alt="Pez Koi">
+      <h3>Pez Koi</h3>
+      <p><em>Cyprinus rubrofuscus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Asia Oriental</p>
+      <p><strong>Hábitat:</strong> Estanques y lagos</p>
+      <p><strong>Género:</strong> Cyprinus</p>
+      <p><strong>Familia:</strong> Cyprinidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Lacepède</p>
+      <p><strong>Año de descripción:</strong> 1803</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez16.jpg" alt="Pez Espada">
+      <h3>Pez Espada</h3>
+      <p><em>Xiphias gladius</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Océanos tropicales y templados</p>
+      <p><strong>Hábitat:</strong> Alta mar</p>
+      <p><strong>Género:</strong> Xiphias</p>
+      <p><strong>Familia:</strong> Xiphiidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Linnaeus</p>
+      <p><strong>Año de descripción:</strong> 1758</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez17.jpg" alt="Pez Globo">
+      <h3>Pez Globo</h3>
+      <p><em>Tetraodon nigroviridis</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Sudeste Asiático</p>
+      <p><strong>Hábitat:</strong> Estuarios y manglares</p>
+      <p><strong>Género:</strong> Tetraodon</p>
+      <p><strong>Familia:</strong> Tetraodontidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Marion de Procé</p>
+      <p><strong>Año de descripción:</strong> 1822</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez18.jpg" alt="Pez León">
+      <h3>Pez León</h3>
+      <p><em>Pterois volitans</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Indo-Pacífico</p>
+      <p><strong>Hábitat:</strong> Arrecifes coralinos</p>
+      <p><strong>Género:</strong> Pterois</p>
+      <p><strong>Familia:</strong> Scorpaenidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Linnaeus</p>
+      <p><strong>Año de descripción:</strong> 1758</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez19.jpg" alt="Pez Mandarín">
+      <h3>Pez Mandarín</h3>
+      <p><em>Synchiropus splendidus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Pacífico occidental</p>
+      <p><strong>Hábitat:</strong> Arrecifes coralinos</p>
+      <p><strong>Género:</strong> Synchiropus</p>
+      <p><strong>Familia:</strong> Callionymidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Herre</p>
+      <p><strong>Año de descripción:</strong> 1927</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/pez20.jpg" alt="Pez Cirujano Azul">
+      <h3>Pez Cirujano Azul</h3>
+      <p><em>Paracanthurus hepatus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Pacífico Indo-Occidental</p>
+      <p><strong>Hábitat:</strong> Arrecifes de coral</p>
+      <p><strong>Género:</strong> Paracanthurus</p>
+      <p><strong>Familia:</strong> Acanthuridae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
+      <p><strong>Descriptor:</strong> Linnaeus</p>
+      <p><strong>Año de descripción:</strong> 1766</p>
+    </div>
+
+    <div class="tarjeta">
+      <img src="imagenes/cardenal.jpg" alt="Cardenal">
+      <h3>Cardenal</h3>
+      <p><em>Paracheirodon axelrodi</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Amazonas (Brasil, Venezuela)</p>
+      <p><strong>Hábitat:</strong> Aguas negras, bien oxigenadas</p>
+      <p><strong>Género:</strong> Paracheirodon</p>
+      <p><strong>Familia:</strong> Characidae</p>
+      <p><strong>Estatus IUCN:</strong> Preocupación menor</p>
+      <p><strong>Descriptor:</strong> Schultz</p>
+      <p><strong>Año de descripción:</strong> 1956</p>
+    </div>
+    
+    <div class="tarjeta">
+      <img src="imagenes/corydora.jpg" alt="Corydora o Chanchito">
+      <h3>Corydora o Chanchito</h3>
+      <p><em>Corydoras aeneus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> América del Sur</p>
+      <p><strong>Hábitat:</strong> Fondos de ríos lentos</p>
+      <p><strong>Género:</strong> Corydoras</p>
+      <p><strong>Familia:</strong> Callichthyidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Gill</p>
+      <p><strong>Año de descripción:</strong> 1858</p>
+    </div>
+    
+    <div class="tarjeta">
+      <img src="imagenes/goldfish.jpg" alt="Goldfish">
+      <h3>Goldfish</h3>
+      <p><em>Carassius auratus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Asia oriental (China)</p>
+      <p><strong>Hábitat:</strong> Aguas tranquilas y frías</p>
+      <p><strong>Género:</strong> Carassius</p>
+      <p><strong>Familia:</strong> Cyprinidae</p>
+      <p><strong>Estatus IUCN:</strong> Doméstico</p>
+      <p><strong>Descriptor:</strong> Linnaeus</p>
+      <p><strong>Año de descripción:</strong> 1758</p>
+    </div>
+    
+    <div class="tarjeta">
+      <img src="imagenes/gurami.jpg" alt="Gurami">
+      <h3>Gurami</h3>
+      <p><em>Trichopodus trichopterus</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Sudeste Asiático</p>
+      <p><strong>Hábitat:</strong> Aguas tranquilas y pantanosas</p>
+      <p><strong>Género:</strong> Trichopodus</p>
+      <p><strong>Familia:</strong> Osphronemidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Pallas</p>
+      <p><strong>Año de descripción:</strong> 1770</p>
+    </div>
+    
+    <div class="tarjeta">
+      <img src="imagenes/otocinclus.jpg" alt="Otocinclus">
+      <h3>Otocinclus</h3>
+      <p><em>Otocinclus affinis</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> América del Sur (Brasil)</p>
+      <p><strong>Hábitat:</strong> Riachuelos con vegetación</p>
+      <p><strong>Género:</strong> Otocinclus</p>
+      <p><strong>Familia:</strong> Loricariidae</p>
+      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
+      <p><strong>Descriptor:</strong> Steindachner</p>
+      <p><strong>Año de descripción:</strong> 1877</p>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
+      <!-- Cara frontal -->
+      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
+        <img src="imagenes/betta.jpg" alt="Imagen del pez" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
       </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez7.jpg" alt="Pez Payaso">
-        <h3>Pez Payaso</h3>
-        <p><em>Amphiprioninae</em></p>
-        <p class="precio">Precio: C$350</p>
-        <p><strong>Origen:</strong> Océano Pacífico y océano Índico</p>
-        <p><strong>Hábitat:</strong> Arrecifes de coral</p>
-        <p><strong>Género:</strong> Amphiprion</p>
-        <p><strong>Familia:</strong> Pomacentridae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Cuvier</p>
-        <p><strong>Año de descripción:</strong> 1830</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez8.jpg" alt="Tetra Cebra">
-        <h3>Tetra Cebra</h3>
-        <p><em>Danio rerio</em></p>
-        <p class="precio">Precio: C$50</p>
-        <p><strong>Origen:</strong> Subcontinente indio</p>
-        <p><strong>Hábitat:</strong> Aguas frescas y tranquilas</p>
-        <p><strong>Género:</strong> Danio</p>
-        <p><strong>Familia:</strong> Cyprinidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Hamilton</p>
-        <p><strong>Año de descripción:</strong> 1822</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez9.jpg" alt="Corydoras">
-        <h3>Corydoras</h3>
-        <p><em>Corydoras aeneus</em></p>
-        <p class="precio">Precio: C$85</p>
-        <p><strong>Origen:</strong> América del Sur</p>
-        <p><strong>Hábitat:</strong> Ríos y lagos de agua dulce</p>
-        <p><strong>Género:</strong> Corydoras</p>
-        <p><strong>Familia:</strong> Callichthyidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Lichtenstein</p>
-        <p><strong>Año de descripción:</strong> 1823</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez10.jpg" alt="Arowana">
-        <h3>Arowana</h3>
-        <p><em>Osteoglossum bicirrhosum</em></p>
-        <p class="precio">Precio: C$450</p>
-        <p><strong>Origen:</strong> Cuenca amazónica, Sudamérica</p>
-        <p><strong>Hábitat:</strong> Aguas tropicales con corrientes lentas</p>
-        <p><strong>Género:</strong> Osteoglossum</p>
-        <p><strong>Familia:</strong> Osteoglossidae</p>
-        <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-        <p><strong>Descriptor:</strong> Cuvier</p>
-        <p><strong>Año de descripción:</strong> 1829</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez11.jpg" alt="Pez Loro">
-        <h3>Pez Loro</h3>
-        <p><em>Scarus</em></p>
-        <p class="precio">Precio: C$600</p>
-        <p><strong>Origen:</strong> Océano Pacífico y Mar Rojo</p>
-        <p><strong>Hábitat:</strong> Arrecifes de coral y fondos marinos rocosos</p>
-        <p><strong>Género:</strong> Scarus</p>
-        <p><strong>Familia:</strong> Scaridae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Linnaeus</p>
-        <p><strong>Año de descripción:</strong> 1758</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez12.jpg" alt="Pez Betta Multi Color">
-        <h3>Pez Betta Multi Color</h3>
-        <p><em>Betta splendens</em></p>
-        <p class="precio">Precio: C$120</p>
-        <p><strong>Origen:</strong> Sudeste Asiático</p>
-        <p><strong>Hábitat:</strong> Aguas tranquilas en arrozales</p>
-        <p><strong>Género:</strong> Betta</p>
-        <p><strong>Familia:</strong> Osphronemidae</p>
-        <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-        <p><strong>Descriptor:</strong> Regan</p>
-        <p><strong>Año de descripción:</strong> 1910</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez13.jpg" alt="Pez Guppy">
-        <h3>Pez Guppy</h3>
-        <p><em>Poecilia reticulata</em></p>
-        <p class="precio">Precio: C$60</p>
-        <p><strong>Origen:</strong> América del Sur</p>
-        <p><strong>Hábitat:</strong> Ríos y lagos de aguas cálidas</p>
-        <p><strong>Género:</strong> Poecilia</p>
-        <p><strong>Familia:</strong> Poeciliidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Peters</p>
-        <p><strong>Año de descripción:</strong> 1859</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez14.jpg" alt="Pez Tetra Neon">
-        <h3>Pez Tetra Neon</h3>
-        <p><em>Paracheirodon innesi</em></p>
-        <p class="precio">Precio: C$85</p>
-        <p><strong>Origen:</strong> América del Sur (Colombia, Brasil)</p>
-        <p><strong>Hábitat:</strong> Aguas cálidas y ligeramente ácidas</p>
-        <p><strong>Género:</strong> Paracheirodon</p>
-        <p><strong>Familia:</strong> Characidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Meinken</p>
-        <p><strong>Año de descripción:</strong> 1936</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez15.jpg" alt="Pez Discos Azul">
-        <h3>Pez Disco Azul</h3>
-        <p><em>Symphysodon discus</em></p>
-        <p class="precio">Precio: C$550</p>
-        <p><strong>Origen:</strong> Cuenca del Amazonas</p>
-        <p><strong>Hábitat:</strong> Aguas cálidas, turbia y con baja corriente</p>
-        <p><strong>Género:</strong> Symphysodon</p>
-        <p><strong>Familia:</strong> Cichlidae</p>
-        <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-        <p><strong>Descriptor:</strong> Pellegrin</p>
-        <p><strong>Año de descripción:</strong> 1904</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez16.jpg" alt="Pez Koi">
-        <h3>Pez Koi</h3>
-        <p><em>Cyprinus carpio</em></p>
-        <p class="precio">Precio: C$350</p>
-        <p><strong>Origen:</strong> Asia, Japón y China</p>
-        <p><strong>Hábitat:</strong> Estanques y jardines acuáticos</p>
-        <p><strong>Género:</strong> Cyprinus</p>
-        <p><strong>Familia:</strong> Cyprinidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Linnaeus</p>
-        <p><strong>Año de descripción:</strong> 1758</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez17.jpg" alt="Pez Disco Verde">
-        <h3>Pez Disco Verde</h3>
-        <p><em>Symphysodon aequifasciatus</em></p>
-        <p class="precio">Precio: C$600</p>
-        <p><strong>Origen:</strong> Cuenca del Amazonas, Brasil</p>
-        <p><strong>Hábitat:</strong> Aguas cálidas y turbia</p>
-        <p><strong>Género:</strong> Symphysodon</p>
-        <p><strong>Familia:</strong> Cichlidae</p>
-        <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-        <p><strong>Descriptor:</strong> Pellegrin</p>
-        <p><strong>Año de descripción:</strong> 1904</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez18.jpg" alt="Gurami Azul">
-        <h3>Gurami Azul</h3>
-        <p><em>Trichopodus trichopterus</em></p>
-        <p class="precio">Precio: C$180</p>
-        <p><strong>Origen:</strong> Sudeste Asiático</p>
-        <p><strong>Hábitat:</strong> Lagos y estanques de aguas tranquilas</p>
-        <p><strong>Género:</strong> Trichopodus</p>
-        <p><strong>Familia:</strong> Osphronemidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Pallas</p>
-        <p><strong>Año de descripción:</strong> 1770</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez19.jpg" alt="Pez Borrachio">
-        <h3>Pez Borrachio</h3>
-        <p><em>Macropodus opercularis</em></p>
-        <p class="precio">Precio: C$95</p>
-        <p><strong>Origen:</strong> China, Vietnam</p>
-        <p><strong>Hábitat:</strong> Aguas tranquilas y arrozales</p>
-        <p><strong>Género:</strong> Macropodus</p>
-        <p><strong>Familia:</strong> Osphronemidae</p>
-        <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-        <p><strong>Descriptor:</strong> Pallas</p>
-        <p><strong>Año de descripción:</strong> 1770</p>
-      </div>
-  
-      <div class="tarjeta">
-        <img src="imagenes/pez20.jpg" alt="Pez Betta Halfmoon">
-        <h3>Pez Betta Halfmoon</h3>
-        <p><em>Betta splendens</em></p>
-        <p class="precio">Precio: C$150</p>
-        <p><strong>Origen:</strong> Tailandia, Camboya</p>
-        <p><strong>Hábitat:</strong> Aguas tranquilas, arrozales y lagos</p>
-        <p><strong>Género:</strong> Betta</p>
-        <p><strong>Familia:</strong> Osphronemidae</p>
-        <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-        <p><strong>Descriptor:</strong> Regan</p>
-        <p><strong>Año de descripción:</strong> 1910</p>
-      </div>
-  
-  </div>
-</body>
-</html>
+    
+      <!-- Cara trasera -->
+      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
+        <h3 style="text-align:center; color:#0099cc;">Pez Betta</h3>
+      <p><em>Betta splendens</em></p>
+      <p class="Estado">Estado: Disponible</p>
+      <p><strong>Origen:</strong> Sudeste Asiático</p>
+      <p><strong>Hábitat:</strong> Aguas estancadas, arrozales</p>
+      <p><strong>Género:</strong> Betta</p>
+      <p><strong>Familia:</strong> Osphronemidae</p>
+      <p><strong>Estatus IUCN:</strong> Vulnerable</p>
+      <p><strong>Descriptor:</strong> Regan</p>
+      <p><strong>Año de descripción:</strong> 1910</p>
+    </div>

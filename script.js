@@ -1,5 +1,3 @@
-// script.js
-
 let index = 0;
 const imagenes = document.querySelectorAll('.carrusel img');
 
@@ -10,3 +8,10 @@ function mostrarSiguienteImagen() {
 }
 
 setInterval(mostrarSiguienteImagen, 3000); // Cambia cada 3 segundos
+
+function mostrarInfo(btn, tipo) {
+  const tarjeta = btn.closest('.tarjeta');
+  tarjeta.querySelector('.contenido.basica').classList.remove('visible');
+  tarjeta.querySelector('.contenido.climatica').classList.remove('visible');
+  tarjeta.querySelector('.contenido.' + tipo).classList.add('visible');
+}
