@@ -2,514 +2,756 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Catálogo de Peces - La Casa del Pez y +</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Peces</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f8ff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #f0f8ff;
       margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      text-align: center;
       padding: 20px;
-      background-color: #0077cc;
-      color: white;
-      margin: 0;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .tarjeta {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      width: 250px;
+      height: 350px;
+      perspective: 1000px;
+      margin: 10px;
     }
 
-    .tarjeta img {
+    .contenido {
       width: 100%;
-      height: 150px;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .tarjeta:hover .contenido {
+      transform: rotateY(180deg);
+    }
+
+    .frente, .trasera {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .frente {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frente img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
     }
 
-    .tarjeta h3 {
-      margin: 10px 0 5px;
-      color: #0077cc;
+    .trasera {
+      background: #e6f2ff;
+      transform: rotateY(180deg);
+      padding: 10px;
+      overflow-y: auto;
     }
 
-    .tarjeta p {
-      margin: 4px 0;
-      font-size: 14px;
+    h3 {
+      margin-top: 0;
     }
 
-    .Estado {
-      font-weight: bold;
-      color: #28a745;
+    .info {
+      font-size: 0.9em;
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
-  <h1>Catálogo de Peces</h1>
-  <div class="galeria">
 
-    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
-      <!-- Cara frontal -->
-      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
-        <img src="imagenes/pez1.jpg" alt="Imagen del pez" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
-      </div>
-    
-      <!-- Cara trasera -->
-      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
-        <h3 style="text-align:center; color:#0099cc;">Pez Betta</h3>
-        <em>Betta splendens</em><br><br>
-        <strong>Estado:</strong> Disponible<br>
-        <strong>Origen:</strong> Sudeste Asiático<br>
-        <strong>Hábitat:</strong> Arrozales y aguas lentas<br>
-        <strong>Género:</strong> Betta<br>
-        <strong>Familia:</strong> Osphronemidae<br>
-        <strong>Estatus IUCN:</strong> Vulnerable (VU)<br>
-        <strong>Descriptor:</strong> Regan<br>
-        <strong>Año:</strong> 1910<br><br>
-        <hr>
-        <h4>Información Climática</h4>
-        <strong>Tamaño:</strong> 6 cm<br>
-        <strong>Temperatura:</strong> 24-30 °C<br>
-        <strong>pH:</strong> 6.0 - 8.0<br>
-        <strong>GH:</strong> 5-20 dGH<br>
-        <strong>Corriente:</strong> Lenta
-      </div>
+<!-- Tarjeta ejemplo para el Pez Betta -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="imagenes/betta.jpg" alt="Pez Betta">
     </div>
-    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
-      <!-- Cara frontal -->
-      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
-        <img src="imagenes/pez2.jpg" alt="Guppy" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
-      </div>
-    
-      <!-- Cara trasera -->
-      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
-        <h3 style="text-align:center; color:#0099cc;">Guppy</h3>
-        <em>Poecilia reticulata</em><br><br>
-        <strong>Estado:</strong> Disponible<br>
-        <strong>Origen:</strong> América del Sur<br>
-        <strong>Hábitat:</strong> Ríos de aguas cálidas<br>
-        <strong>Género:</strong> Poecilia<br>
-        <strong>Familia:</strong> Poeciliidae<br>
-        <strong>Estatus IUCN:</strong> Preocupación menor (LC)<br>
-        <strong>Descriptor:</strong> W. Peters<br>
-        <strong>Año:</strong> 1859<br><br>
-        <hr>
-        <h4>Información Climática</h4>
-        <strong>Tamaño:</strong> 4-6 cm<br>
-        <strong>Temperatura:</strong> 22-28 °C<br>
-        <strong>pH:</strong> 6.8 - 7.8<br>
-        <strong>GH:</strong> 8 - 12 dGH<br>
-        <strong>Corriente:</strong> Suave
-      </div>
+    <div class="trasera">
+      <h3>Pez Betta</h3>
+      <div class="info"><strong>Nombre científico:</strong> Betta splendens</div>
+      <div class="info"><strong>Estado:</strong> Disponible</div>
+      <div class="info"><strong>Origen:</strong> Sudeste Asiático</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas tranquilas</div>
+      <div class="info"><strong>Género:</strong> Betta</div>
+      <div class="info"><strong>Familia:</strong> Osphronemidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> No evaluado</div>
+      <div class="info"><strong>Descriptor:</strong> Regan, 1910</div>
+      <div class="info"><strong>Tamaño:</strong> 6 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24-30 °C</div>
+      <div class="info"><strong>pH:</strong> 6.5 - 7.5</div>
+      <div class="info"><strong>GH:</strong> 5-20 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
-    
-    <style>
-      .tarjeta.girada .frente {
-        transform: rotateY(-180deg) !important;
-      }
-    
-      .tarjeta.girada .trasera {
-        transform: rotateY(0deg) !important;
-      }
-    </style>
-    
-    
+  </div>
+</div>
+<!-- Tarjetas tipo flip unificadas para peces -->
 
-
-    <style>
-      .tarjeta.girada .frente {
-        transform: rotateY(-180deg) !important;
-      }
-    
-      .tarjeta.girada .trasera {
-        transform: rotateY(0deg) !important;
-      }
-    </style><div class="tarjeta">
-      <img src="imagenes/pez2.jpg" alt="Guppy">
+<!-- 2. Guppy -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="imagenes/guppy.jpg" alt="Guppy">
+    </div>
+    <div class="trasera">
       <h3>Guppy</h3>
-      <p><em>Poecilia reticulata</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América del Sur</p>
-      <p><strong>Hábitat:</strong> Ríos de aguas cálidas</p>
-      <p><strong>Género:</strong> Poecilia</p>
-      <p><strong>Familia:</strong> Poeciliidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> W. Peters</p>
-      <p><strong>Año de descripción:</strong> 1859</p>
-      <p><strong>Tamaño:</strong> 4–6 cm</p>
-      <p><strong>Temperatura:</strong> 22–28 °C</p>
-      <p><strong>pH:</strong> 6.5–8.0</p>
-      <p><strong>GH:</strong> 8–12</p>
-      <p><strong>Corriente:</strong> Suave</p>
+      <div class="info"><strong>Nombre científico:</strong> Poecilia reticulata</div>
+      <div class="info"><strong>Estado:</strong> Disponible</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y canales de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Poecilia</div>
+      <div class="info"><strong>Familia:</strong> Poeciliidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Wilhelm Peters, 1859</div>
+      <div class="info"><strong>Tamaño:</strong> 3–6 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 6.5–8.0</div>
+      <div class="info"><strong>GH:</strong> 10–30 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/pez3.jpg" alt="Pez Ángel">
+  </div>
+</div>
+
+<!-- 3. Pez Neón -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="neon.jpg" alt="Pez Neón">
+    </div>
+    <div class="trasera">
+      <h3>Pez Neón</h3>
+      <div class="info"><strong>Nombre científico:</strong> Paracheirodon innesi</div>
+      <div class="info"><strong>Estado:</strong> C$80</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Cuencas del Amazonas y Orinoco</div>
+      <div class="info"><strong>Género:</strong> Paracheirodon</div>
+      <div class="info"><strong>Familia:</strong> Characidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Myers, 1936</div>
+      <div class="info"><strong>Tamaño:</strong> 3–4 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 20–26°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.0</div>
+      <div class="info"><strong>GH:</strong> 2–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Media</div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Pez Ángel -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="imagenes/pezangel.jpg" alt="Pez Ángel">
+    </div>
+    <div class="trasera">
       <h3>Pez Ángel</h3>
-      <p><em>Pterophyllum scalare</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América del Sur</p>
-      <p><strong>Hábitat:</strong> Cuenca del Amazonas</p>
-      <p><strong>Género:</strong> Pterophyllum</p>
-      <p><strong>Familia:</strong> Cichlidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Heckel</p>
-      <p><strong>Año de descripción:</strong> 1840</p>
-      <p><strong>Tamaño:</strong> 10–15 cm</p>
-      <p><strong>Temperatura:</strong> 24–30 °C</p>
-      <p><strong>pH:</strong> 6.0–7.5</p>
-      <p><strong>GH:</strong> 3–10</p>
-      <p><strong>Corriente:</strong> Moderada</p>
+      <div class="info"><strong>Nombre científico:</strong> Pterophyllum scalare</div>
+      <div class="info"><strong>Estado:</strong> C$120</div>
+      <div class="info"><strong>Origen:</strong> Cuenca del Amazonas</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas tranquilas</div>
+      <div class="info"><strong>Género:</strong> Pterophyllum</div>
+      <div class="info"><strong>Familia:</strong> Cichlidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> NE</div>
+      <div class="info"><strong>Descriptor:</strong> Schultze, 1823</div>
+      <div class="info"><strong>Tamaño:</strong> Hasta 15 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–30°C</div>
+      <div class="info"><strong>pH:</strong> 6.5–7.5</div>
+      <div class="info"><strong>GH:</strong> 3–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/pez4.jpg" alt="Pez Disco">
+  </div>
+</div>
+
+<!-- 5. Pez Disco -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="imagenes/pezdisco.jpg" alt="Pez Disco">
+    </div>
+    <div class="trasera">
       <h3>Pez Disco</h3>
-      <p><em>Symphysodon aequifasciatus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Cuenca amazónica</p>
-      <p><strong>Hábitat:</strong> Aguas cálidas y ácidas</p>
-      <p><strong>Género:</strong> Symphysodon</p>
-      <p><strong>Familia:</strong> Cichlidae</p>
-      <p><strong>Estatus IUCN:</strong> Vulnerable (VU)</p>
-      <p><strong>Descriptor:</strong> Pellegrin</p>
-      <p><strong>Año de descripción:</strong> 1904</p>
-      <p><strong>Tamaño:</strong> 12–15 cm</p>
-      <p><strong>Temperatura:</strong> 27–30 °C</p>
-      <p><strong>pH:</strong> 5.0–7.0</p>
-      <p><strong>GH:</strong> 1–4</p>
-      <p><strong>Corriente:</strong> Lenta</p>
+      <div class="info"><strong>Nombre científico:</strong> Symphysodon aequifasciatus</div>
+      <div class="info"><strong>Estado:</strong> Disponible</div>
+      <div class="info"><strong>Origen:</strong> Cuenca del Amazonas</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas tranquilas</div>
+      <div class="info"><strong>Género:</strong> Symphysodon</div>
+      <div class="info"><strong>Familia:</strong> Cichlidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> Vulnerable (VU)</div>
+      <div class="info"><strong>Descriptor:</strong> Pellegrin, 1904</div>
+      <div class="info"><strong>Tamaño:</strong> 12-15 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 27–30°C</div>
+      <div class="info"><strong>pH:</strong> 5.0–7.5</div>
+      <div class="info"><strong>GH:</strong> 1–4 </div>
+      <div class="info"><strong>Corriente:</strong> Lenta</div>
     </div>
-    
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez5.jpg" alt="Tetra Neón">
+<!-- 6. Molly Negro -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="molly_negro.jpg" alt="Molly Negro">
+    </div>
+    <div class="trasera">
+      <h3>Molly Negro</h3>
+      <div class="info"><strong>Nombre científico:</strong> Poecilia sphenops</div>
+      <div class="info"><strong>Estado:</strong> C$70</div>
+      <div class="info"><strong>Origen:</strong> América Central</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas dulces y salobres</div>
+      <div class="info"><strong>Género:</strong> Poecilia</div>
+      <div class="info"><strong>Familia:</strong> Poeciliidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Valenciennes, 1846</div>
+      <div class="info"><strong>Tamaño:</strong> 6–10 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.0–8.5</div>
+      <div class="info"><strong>GH:</strong> 15–30 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Cíclido Ramirezi -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="ramirezi.jpg" alt="Cíclido Ramirezi">
+    </div>
+    <div class="trasera">
+      <h3>Cíclido Ramirezi</h3>
+      <div class="info"><strong>Nombre científico:</strong> Mikrogeophagus ramirezi</div>
+      <div class="info"><strong>Estado:</strong> C$150</div>
+      <div class="info"><strong>Origen:</strong> Venezuela y Colombia</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas tranquilas y cálidas</div>
+      <div class="info"><strong>Género:</strong> Mikrogeophagus</div>
+      <div class="info"><strong>Familia:</strong> Cichlidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> NE</div>
+      <div class="info"><strong>Descriptor:</strong> Myers & Harry, 1948</div>
+      <div class="info"><strong>Tamaño:</strong> 5–7 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 26–30°C</div>
+      <div class="info"><strong>pH:</strong> 5.5–7.0</div>
+      <div class="info"><strong>GH:</strong> 1–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Tetra Cardenal -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="tetra_cardenal.jpg" alt="Tetra Cardenal">
+    </div>
+    <div class="trasera">
+      <h3>Tetra Cardenal</h3>
+      <div class="info"><strong>Nombre científico:</strong> Paracheirodon axelrodi</div>
+      <div class="info"><strong>Estado:</strong> C$90</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos Negros del Amazonas</div>
+      <div class="info"><strong>Género:</strong> Paracheirodon</div>
+      <div class="info"><strong>Familia:</strong> Characidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Schultz, 1956</div>
+      <div class="info"><strong>Tamaño:</strong> 3–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 23–27°C</div>
+      <div class="info"><strong>pH:</strong> 4.5–6.5</div>
+      <div class="info"><strong>GH:</strong> 1–6 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. Tetra Neón -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="tetra_neon.jpg" alt="Tetra Neón">
+    </div>
+    <div class="trasera">
       <h3>Tetra Neón</h3>
-      <p><em>Paracheirodon innesi</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Colombia y Brasil</p>
-      <p><strong>Hábitat:</strong> Aguas tropicales cálidas</p>
-      <p><strong>Género:</strong> Paracheirodon</p>
-      <p><strong>Familia:</strong> Characidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Meinken</p>
-      <p><strong>Año de descripción:</strong> 1936</p>
+      <div class="info"><strong>Nombre científico:</strong> Paracheirodon innesi</div>
+      <div class="info"><strong>Estado:</strong> C$90</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos de agua dulce en la cuenca del Amazonas</div>
+      <div class="info"><strong>Género:</strong> Paracheirodon</div>
+      <div class="info"><strong>Familia:</strong> Characidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Myers, 1936</div>
+      <div class="info"><strong>Tamaño:</strong> 3–4 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 20–26°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.0</div>
+      <div class="info"><strong>GH:</strong> 2–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez6.jpg" alt="Ciclido Oscar">
-      <h3>Ciclido Oscar</h3>
-      <p><em>Astronotus ocellatus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Cuenca del Amazonas</p>
-      <p><strong>Hábitat:</strong> Aguas cálidas y profundas</p>
-      <p><strong>Género:</strong> Astronotus</p>
-      <p><strong>Familia:</strong> Cichlidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Cuvier</p>
-      <p><strong>Año de descripción:</strong> 1828</p>
+<!-- 10. Cíclido Oscar -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="oscar.jpg" alt="Cíclido Oscar">
     </div>
+    <div class="trasera">
+      <h3>Cíclido Oscar</h3>
+      <div class="info"><strong>Nombre científico:</strong> Astronotus ocellatus</div>
+      <div class="info"><strong>Estado:</strong> C$250</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos de América Central y del Sur</div>
+      <div class="info"><strong>Género:</strong> Astronotus</div>
+      <div class="info"><strong>Familia:</strong> Cichlidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Agassiz, 1831</div>
+      <div class="info"><strong>Tamaño:</strong> 30–35 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–30°C</div>
+      <div class="info"><strong>pH:</strong> 6.5–7.5</div>
+      <div class="info"><strong>GH:</strong> 8–15 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez7.jpg" alt="Pez Payaso">
+<!-- 11. Pez Payaso -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_payaso.jpg" alt="Pez Payaso">
+    </div>
+    <div class="trasera">
       <h3>Pez Payaso</h3>
-      <p><em>Amphiprioninae</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Pacífico e Índico</p>
-      <p><strong>Hábitat:</strong> Arrecifes de coral</p>
-      <p><strong>Género:</strong> Amphiprion</p>
-      <p><strong>Familia:</strong> Pomacentridae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Cuvier</p>
-      <p><strong>Año de descripción:</strong> 1830</p>
+      <div class="info"><strong>Nombre científico:</strong> Amphiprioninae</div>
+      <div class="info"><strong>Estado:</strong> C$180</div>
+      <div class="info"><strong>Origen:</strong> Océanos Pacífico e Índico</div>
+      <div class="info"><strong>Hábitat:</strong> Arrecifes de coral y zonas costeras</div>
+      <div class="info"><strong>Género:</strong> Amphiprion</div>
+      <div class="info"><strong>Familia:</strong> Pomacentridae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Bloch, 1792</div>
+      <div class="info"><strong>Tamaño:</strong> 7–10 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.8–8.4</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez8.jpg" alt="Tetra Cebra">
+<!-- 12. Tetra Cebra -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="tetra_cebra.jpg" alt="Tetra Cebra">
+    </div>
+    <div class="trasera">
       <h3>Tetra Cebra</h3>
-      <p><em>Danio rerio</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Subcontinente indio</p>
-      <p><strong>Hábitat:</strong> Aguas frescas y tranquilas</p>
-      <p><strong>Género:</strong> Danio</p>
-      <p><strong>Familia:</strong> Cyprinidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Hamilton</p>
-      <p><strong>Año de descripción:</strong> 1822</p>
+      <div class="info"><strong>Nombre científico:</strong> Gymnocorymbus ternetzi</div>
+      <div class="info"><strong>Estado:</strong> C$70</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos en la cuenca del río Paraná</div>
+      <div class="info"><strong>Género:</strong> Gymnocorymbus</div>
+      <div class="info"><strong>Familia:</strong> Characidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Boulenger, 1895</div>
+      <div class="info"><strong>Tamaño:</strong> 4–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.0</div>
+      <div class="info"><strong>GH:</strong> 6–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Media</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez9.jpg" alt="Corydoras">
+<!-- 13. Corydoras -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="corydoras.jpg" alt="Corydoras">
+    </div>
+    <div class="trasera">
       <h3>Corydoras</h3>
-      <p><em>Corydoras aeneus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América del Sur</p>
-      <p><strong>Hábitat:</strong> Ríos y lagos de agua dulce</p>
-      <p><strong>Género:</strong> Corydoras</p>
-      <p><strong>Familia:</strong> Callichthyidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Lichtenstein</p>
-      <p><strong>Año de descripción:</strong> 1823</p>
+      <div class="info"><strong>Nombre científico:</strong> Corydoras spp.</div>
+      <div class="info"><strong>Estado:</strong> C$110</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Fondos de ríos y lagos en aguas dulces</div>
+      <div class="info"><strong>Género:</strong> Corydoras</div>
+      <div class="info"><strong>Familia:</strong> Callichthyidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Lacepède, 1803</div>
+      <div class="info"><strong>Tamaño:</strong> 5–7 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.0</div>
+      <div class="info"><strong>GH:</strong> 4–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez10.jpg" alt="Arowana">
+<!-- 14. Arowana -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="arowana.jpg" alt="Arowana">
+    </div>
+    <div class="trasera">
       <h3>Arowana</h3>
-      <p><em>Osteoglossum bicirrhosum</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Cuenca amazónica</p>
-      <p><strong>Hábitat:</strong> Aguas tropicales con corrientes lentas</p>
-      <p><strong>Género:</strong> Osteoglossum</p>
-      <p><strong>Familia:</strong> Osteoglossidae</p>
-      <p><strong>Estatus IUCN:</strong> Datos insuficientes (DD)</p>
-      <p><strong>Descriptor:</strong> Cuvier</p>
-      <p><strong>Año de descripción:</strong> 1829</p>
+      <div class="info"><strong>Nombre científico:</strong> Scleropages formosus</div>
+      <div class="info"><strong>Estado:</strong> C$800</div>
+      <div class="info"><strong>Origen:</strong> Sudeste Asiático</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Scleropages</div>
+      <div class="info"><strong>Familia:</strong> Osteoglossidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> EN</div>
+      <div class="info"><strong>Descriptor:</strong> Bloch, 1795</div>
+      <div class="info"><strong>Tamaño:</strong> 90 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 28–30°C</div>
+      <div class="info"><strong>pH:</strong> 6.5–7.5</div>
+      <div class="info"><strong>GH:</strong> 4–8 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez11.jpg" alt="Pez Gato">
-      <h3>Pez Gato</h3>
-      <p><em>Pimelodus pictus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Amazonas y Orinoco</p>
-      <p><strong>Hábitat:</strong> Fondos arenosos</p>
-      <p><strong>Género:</strong> Pimelodus</p>
-      <p><strong>Familia:</strong> Pimelodidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Steindachner</p>
-      <p><strong>Año de descripción:</strong> 1876</p>
+<!-- 15. Pez Globo -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_globo.jpg" alt="Pez Globo">
     </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez12.jpg" alt="Molly">
-      <h3>Molly</h3>
-      <p><em>Poecilia sphenops</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> México y América Central</p>
-      <p><strong>Hábitat:</strong> Aguas dulces y salobres</p>
-      <p><strong>Género:</strong> Poecilia</p>
-      <p><strong>Familia:</strong> Poeciliidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Valenciennes</p>
-      <p><strong>Año de descripción:</strong> 1846</p>
-    </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez13.jpg" alt="Platy">
-      <h3>Platy</h3>
-      <p><em>Xiphophorus maculatus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América Central</p>
-      <p><strong>Hábitat:</strong> Aguas cálidas y tranquilas</p>
-      <p><strong>Género:</strong> Xiphophorus</p>
-      <p><strong>Familia:</strong> Poeciliidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Günther</p>
-      <p><strong>Año de descripción:</strong> 1866</p>
-    </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez14.jpg" alt="Xipho o Cola de Espada">
-      <h3>Xipho</h3>
-      <p><em>Xiphophorus hellerii</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América Central</p>
-      <p><strong>Hábitat:</strong> Arroyos y ríos</p>
-      <p><strong>Género:</strong> Xiphophorus</p>
-      <p><strong>Familia:</strong> Poeciliidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Heckel</p>
-      <p><strong>Año de descripción:</strong> 1848</p>
-    </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez15.jpg" alt="Pez Koi">
-      <h3>Pez Koi</h3>
-      <p><em>Cyprinus rubrofuscus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Asia Oriental</p>
-      <p><strong>Hábitat:</strong> Estanques y lagos</p>
-      <p><strong>Género:</strong> Cyprinus</p>
-      <p><strong>Familia:</strong> Cyprinidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Lacepède</p>
-      <p><strong>Año de descripción:</strong> 1803</p>
-    </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez16.jpg" alt="Pez Espada">
-      <h3>Pez Espada</h3>
-      <p><em>Xiphias gladius</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Océanos tropicales y templados</p>
-      <p><strong>Hábitat:</strong> Alta mar</p>
-      <p><strong>Género:</strong> Xiphias</p>
-      <p><strong>Familia:</strong> Xiphiidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Linnaeus</p>
-      <p><strong>Año de descripción:</strong> 1758</p>
-    </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez17.jpg" alt="Pez Globo">
+    <div class="trasera">
       <h3>Pez Globo</h3>
-      <p><em>Tetraodon nigroviridis</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Sudeste Asiático</p>
-      <p><strong>Hábitat:</strong> Estuarios y manglares</p>
-      <p><strong>Género:</strong> Tetraodon</p>
-      <p><strong>Familia:</strong> Tetraodontidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Marion de Procé</p>
-      <p><strong>Año de descripción:</strong> 1822</p>
+      <div class="info"><strong>Nombre científico:</strong> Tetraodon spp.</div>
+      <div class="info"><strong>Precio:</strong> C$150</div>
+      <div class="info"><strong>Origen:</strong> Asia y África</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Tetraodon</div>
+      <div class="info"><strong>Familia:</strong> Tetraodontidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Linnaeus, 1758</div>
+      <div class="info"><strong>Tamaño:</strong> 10–30 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.0–8.0</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez18.jpg" alt="Pez León">
-      <h3>Pez León</h3>
-      <p><em>Pterois volitans</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Indo-Pacífico</p>
-      <p><strong>Hábitat:</strong> Arrecifes coralinos</p>
-      <p><strong>Género:</strong> Pterois</p>
-      <p><strong>Familia:</strong> Scorpaenidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Linnaeus</p>
-      <p><strong>Año de descripción:</strong> 1758</p>
+<!-- 16. Pez Mandarín -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_mandarin.jpg" alt="Pez Mandarín">
     </div>
-
-    <div class="tarjeta">
-      <img src="imagenes/pez19.jpg" alt="Pez Mandarín">
+    <div class="trasera">
       <h3>Pez Mandarín</h3>
-      <p><em>Synchiropus splendidus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Pacífico occidental</p>
-      <p><strong>Hábitat:</strong> Arrecifes coralinos</p>
-      <p><strong>Género:</strong> Synchiropus</p>
-      <p><strong>Familia:</strong> Callionymidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Herre</p>
-      <p><strong>Año de descripción:</strong> 1927</p>
+      <div class="info"><strong>Nombre científico:</strong> Synchiropus splendidus</div>
+      <div class="info"><strong>Precio:</strong> C$350</div>
+      <div class="info"><strong>Origen:</strong> Océano Pacífico</div>
+      <div class="info"><strong>Hábitat:</strong> Arrecifes de coral en aguas poco profundas</div>
+      <div class="info"><strong>Género:</strong> Synchiropus</div>
+      <div class="info"><strong>Familia:</strong> Callionymidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Valenciennes, 1837</div>
+      <div class="info"><strong>Tamaño:</strong> 4–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.8–8.4</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/pez20.jpg" alt="Pez Cirujano Azul">
+<!-- 17. Pez Cirujano Azul -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_cirujano_azul.jpg" alt="Pez Cirujano Azul">
+    </div>
+    <div class="trasera">
       <h3>Pez Cirujano Azul</h3>
-      <p><em>Paracanthurus hepatus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Pacífico Indo-Occidental</p>
-      <p><strong>Hábitat:</strong> Arrecifes de coral</p>
-      <p><strong>Género:</strong> Paracanthurus</p>
-      <p><strong>Familia:</strong> Acanthuridae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor (LC)</p>
-      <p><strong>Descriptor:</strong> Linnaeus</p>
-      <p><strong>Año de descripción:</strong> 1766</p>
+      <div class="info"><strong>Nombre científico:</strong> Paracanthurus hepatus</div>
+      <div class="info"><strong>Precio:</strong> C$400</div>
+      <div class="info"><strong>Origen:</strong> Océano Pacífico</div>
+      <div class="info"><strong>Hábitat:</strong> Arrecifes de coral en aguas tropicales</div>
+      <div class="info"><strong>Género:</strong> Paracanthurus</div>
+      <div class="info"><strong>Familia:</strong> Acanthuridae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> VU</div>
+      <div class="info"><strong>Descriptor:</strong> Bloch, 1795</div>
+      <div class="info"><strong>Tamaño:</strong> 30–40 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 8.0–8.4</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta">
-      <img src="imagenes/cardenal.jpg" alt="Cardenal">
-      <h3>Cardenal</h3>
-      <p><em>Paracheirodon axelrodi</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Amazonas (Brasil, Venezuela)</p>
-      <p><strong>Hábitat:</strong> Aguas negras, bien oxigenadas</p>
-      <p><strong>Género:</strong> Paracheirodon</p>
-      <p><strong>Familia:</strong> Characidae</p>
-      <p><strong>Estatus IUCN:</strong> Preocupación menor</p>
-      <p><strong>Descriptor:</strong> Schultz</p>
-      <p><strong>Año de descripción:</strong> 1956</p>
+<!-- 18. Otocinclus -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="otocinclus.jpg" alt="Otocinclus">
     </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/corydora.jpg" alt="Corydora o Chanchito">
-      <h3>Corydora o Chanchito</h3>
-      <p><em>Corydoras aeneus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América del Sur</p>
-      <p><strong>Hábitat:</strong> Fondos de ríos lentos</p>
-      <p><strong>Género:</strong> Corydoras</p>
-      <p><strong>Familia:</strong> Callichthyidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Gill</p>
-      <p><strong>Año de descripción:</strong> 1858</p>
-    </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/goldfish.jpg" alt="Goldfish">
-      <h3>Goldfish</h3>
-      <p><em>Carassius auratus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Asia oriental (China)</p>
-      <p><strong>Hábitat:</strong> Aguas tranquilas y frías</p>
-      <p><strong>Género:</strong> Carassius</p>
-      <p><strong>Familia:</strong> Cyprinidae</p>
-      <p><strong>Estatus IUCN:</strong> Doméstico</p>
-      <p><strong>Descriptor:</strong> Linnaeus</p>
-      <p><strong>Año de descripción:</strong> 1758</p>
-    </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/gurami.jpg" alt="Gurami">
-      <h3>Gurami</h3>
-      <p><em>Trichopodus trichopterus</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Sudeste Asiático</p>
-      <p><strong>Hábitat:</strong> Aguas tranquilas y pantanosas</p>
-      <p><strong>Género:</strong> Trichopodus</p>
-      <p><strong>Familia:</strong> Osphronemidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Pallas</p>
-      <p><strong>Año de descripción:</strong> 1770</p>
-    </div>
-    
-    <div class="tarjeta">
-      <img src="imagenes/otocinclus.jpg" alt="Otocinclus">
+    <div class="trasera">
       <h3>Otocinclus</h3>
-      <p><em>Otocinclus affinis</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> América del Sur (Brasil)</p>
-      <p><strong>Hábitat:</strong> Riachuelos con vegetación</p>
-      <p><strong>Género:</strong> Otocinclus</p>
-      <p><strong>Familia:</strong> Loricariidae</p>
-      <p><strong>Estatus IUCN:</strong> No Evaluado</p>
-      <p><strong>Descriptor:</strong> Steindachner</p>
-      <p><strong>Año de descripción:</strong> 1877</p>
+      <div class="info"><strong>Nombre científico:</strong> Otocinclus spp.</div>
+      <div class="info"><strong>Precio:</strong> C$100</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y arroyos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Otocinclus</div>
+      <div class="info"><strong>Familia:</strong> Loricariidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Spix, 1829</div>
+      <div class="info"><strong>Tamaño:</strong> 4–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.5</div>
+      <div class="info"><strong>GH:</strong> 4–8 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
     </div>
+  </div>
+</div>
 
-    <div class="tarjeta" onclick="this.classList.toggle('girada')" style="width:260px; height:400px; perspective:1000px; margin:1rem auto; cursor:pointer; position:relative;">
-      <!-- Cara frontal -->
-      <div class="cara frente" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(0deg); display:flex; align-items:center; justify-content:center;">
-        <img src="imagenes/betta.jpg" alt="Imagen del pez" style="width:100%; height:100%; border-radius:12px; object-fit:cover;">
-      </div>
-    
-      <!-- Cara trasera -->
-      <div class="cara trasera" style="width:100%; height:100%; position:absolute; border-radius:12px; backface-visibility:hidden; transition:transform 0.8s; background:#fff; padding:1rem; overflow-y:auto; transform:rotateY(180deg); font-size:14px;">
-        <h3 style="text-align:center; color:#0099cc;">Pez Betta</h3>
-      <p><em>Betta splendens</em></p>
-      <p class="Estado">Estado: Disponible</p>
-      <p><strong>Origen:</strong> Sudeste Asiático</p>
-      <p><strong>Hábitat:</strong> Aguas estancadas, arrozales</p>
-      <p><strong>Género:</strong> Betta</p>
-      <p><strong>Familia:</strong> Osphronemidae</p>
-      <p><strong>Estatus IUCN:</strong> Vulnerable</p>
-      <p><strong>Descriptor:</strong> Regan</p>
-      <p><strong>Año de descripción:</strong> 1910</p>
+<!-- 19. Goldfish -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="goldfish.jpg" alt="Goldfish">
     </div>
+    <div class="trasera">
+      <h3>Goldfish</h3>
+      <div class="info"><strong>Nombre científico:</strong> Carassius auratus</div>
+      <div class="info"><strong>Precio:</strong> C$80</div>
+      <div class="info"><strong>Origen:</strong> China</div>
+      <div class="info"><strong>Hábitat:</strong> Lagos y estanques de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Carassius</div>
+      <div class="info"><strong>Familia:</strong> Cyprinidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Linnaeus, 1758</div>
+      <div class="info"><strong>Tamaño:</strong> 15–20 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 18–24°C</div>
+      <div class="info"><strong>pH:</strong> 6.5–7.5</div>
+      <div class="info"><strong>GH:</strong> 5–15 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 20. Corydora -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="corydora.jpg" alt="Corydora">
+    </div>
+    <div class="trasera">
+      <h3>Corydora</h3>
+      <div class="info"><strong>Nombre científico:</strong> Corydoras spp.</div>
+      <div class="info"><strong>Precio:</strong> C$110</div>
+      <div class="info"><strong>Origen:</strong> América del Sur</div>
+      <div class="info"><strong>Hábitat:</strong> Fondos de ríos y lagos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Corydoras</div>
+      <div class="info"><strong>Familia:</strong> Callichthyidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Lacepède, 1803</div>
+      <div class="info"><strong>Tamaño:</strong> 5–7 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.0</div>
+      <div class="info"><strong>GH:</strong> 4–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 21. Gurami -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="gurami.jpg" alt="Gurami">
+    </div>
+    <div class="trasera">
+      <h3>Gurami</h3>
+      <div class="info"><strong>Nombre científico:</strong> Trichopodus trichopterus</div>
+      <div class="info"><strong>Precio:</strong> C$150</div>
+      <div class="info"><strong>Origen:</strong> Asia del Sur y Sudeste Asiático</div>
+      <div class="info"><strong>Hábitat:</strong> Aguas dulces y turbia en ríos y lagos</div>
+      <div class="info"><strong>Género:</strong> Trichopodus</div>
+      <div class="info"><strong>Familia:</strong> Osphronemidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Pallas, 1770</div>
+      <div class="info"><strong>Tamaño:</strong> 10–12 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–30°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.5</div>
+      <div class="info"><strong>GH:</strong> 4–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 22. Cardenal -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="cardenal.jpg" alt="Cardenal">
+    </div>
+    <div class="trasera">
+      <h3>Cardenal</h3>
+      <div class="info"><strong>Nombre científico:</strong> Tanichthys albonubes</div>
+      <div class="info"><strong>Precio:</strong> C$90</div>
+      <div class="info"><strong>Origen:</strong> China</div>
+      <div class="info"><strong>Hábitat:</strong> Arroyos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Tanichthys</div>
+      <div class="info"><strong>Familia:</strong> Cyprinidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Ng & Kottelat, 2008</div>
+      <div class="info"><strong>Tamaño:</strong> 4–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 20–26°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.5</div>
+      <div class="info"><strong>GH:</strong> 4–10 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 23. Pez León -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_leon.jpg" alt="Pez León">
+    </div>
+    <div class="trasera">
+      <h3>Pez León</h3>
+      <div class="info"><strong>Nombre científico:</strong> Pterois volitans</div>
+      <div class="info"><strong>Precio:</strong> C$550</div>
+      <div class="info"><strong>Origen:</strong> Océano Indo-Pacífico</div>
+      <div class="info"><strong>Hábitat:</strong> Arrecifes de coral</div>
+      <div class="info"><strong>Género:</strong> Pterois</div>
+      <div class="info"><strong>Familia:</strong> Scorpaenidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Linnaeus, 1758</div>
+      <div class="info"><strong>Tamaño:</strong> 35 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.8–8.4</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 24. Pez Espada -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_espada.jpg" alt="Pez Espada">
+    </div>
+    <div class="trasera">
+      <h3>Pez Espada</h3>
+      <div class="info"><strong>Nombre científico:</strong> Xiphophorus hellerii</div>
+      <div class="info"><strong>Precio:</strong> C$120</div>
+      <div class="info"><strong>Origen:</strong> América Central y México</div>
+      <div class="info"><strong>Hábitat:</strong> Lagos y ríos de aguas dulces</div>
+      <div class="info"><strong>Género:</strong> Xiphophorus</div>
+      <div class="info"><strong>Familia:</strong> Poeciliidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Heckel, 1848</div>
+      <div class="info"><strong>Tamaño:</strong> 10–12 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 24–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.0–8.0</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 25. Pez Koi -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="pez_koi.jpg" alt="Pez Koi">
+    </div>
+    <div class="trasera">
+      <h3>Pez Koi</h3>
+      <div class="info"><strong>Nombre científico:</strong> Cyprinus carpio</div>
+      <div class="info"><strong>Precio:</strong> C$300</div>
+      <div class="info"><strong>Origen:</strong> Japón y China</div>
+      <div class="info"><strong>Hábitat:</strong> Estanques y lagos</div>
+      <div class="info"><strong>Género:</strong> Cyprinus</div>
+      <div class="info"><strong>Familia:</strong> Cyprinidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Linnaeus, 1758</div>
+      <div class="info"><strong>Tamaño:</strong> 60–90 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 15–25°C</div>
+      <div class="info"><strong>pH:</strong> 6.0–7.5</div>
+      <div class="info"><strong>GH:</strong> 5–20 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 26. Xipho -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="xipho.jpg" alt="Xipho">
+    </div>
+    <div class="trasera">
+      <h3>Xipho</h3>
+      <div class="info"><strong>Nombre científico:</strong> Xiphophorus maculatus</div>
+      <div class="info"><strong>Precio:</strong> C$90</div>
+      <div class="info"><strong>Origen:</strong> América Central</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos de aguas dulces</div>
+      <div class="info"><strong>Género:</strong> Xiphophorus</div>
+      <div class="info"><strong>Familia:</strong> Poeciliidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Günther, 1866</div>
+      <div class="info"><strong>Tamaño:</strong> 5–7 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.0–8.0</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+<!-- 27. Platy -->
+<div class="tarjeta">
+  <div class="contenido">
+    <div class="frente">
+      <img src="platy.jpg" alt="Platy">
+    </div>
+    <div class="trasera">
+      <h3>Platy</h3>
+      <div class="info"><strong>Nombre científico:</strong> Xiphophorus maculatus</div>
+      <div class="info"><strong>Precio:</strong> C$80</div>
+      <div class="info"><strong>Origen:</strong> América Central</div>
+      <div class="info"><strong>Hábitat:</strong> Ríos y lagos de agua dulce</div>
+      <div class="info"><strong>Género:</strong> Xiphophorus</div>
+      <div class="info"><strong>Familia:</strong> Poeciliidae</div>
+      <div class="info"><strong>Estatus IUCN:</strong> LC</div>
+      <div class="info"><strong>Descriptor:</strong> Heckel, 1848</div>
+      <div class="info"><strong>Tamaño:</strong> 4–5 cm</div>
+      <div class="info"><strong>Temperatura:</strong> 22–28°C</div>
+      <div class="info"><strong>pH:</strong> 7.0–8.0</div>
+      <div class="info"><strong>GH:</strong> 8–12 dGH</div>
+      <div class="info"><strong>Corriente:</strong> Baja</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
