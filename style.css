@@ -320,3 +320,23 @@ h1 {
   transition: opacity 0.3s ease;
 }
 
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  animation: fadeIn 2s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
