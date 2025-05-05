@@ -7,12 +7,18 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       background-color: #f0f8ff;
       margin: 0;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
     }
 
     .tarjeta {
@@ -20,6 +26,7 @@
       height: 350px;
       perspective: 1000px;
       margin: 10px;
+      cursor: pointer;
     }
 
     .contenido {
@@ -30,7 +37,7 @@
       transition: transform 0.8s;
     }
 
-    .tarjeta:hover .contenido {
+    .tarjeta.activa .contenido {
       transform: rotateY(180deg);
     }
 
@@ -73,12 +80,56 @@
       font-size: 0.9em;
       margin-bottom: 5px;
     }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .tarjeta {
+        width: 90%;
+        height: auto;
+        perspective: none;
+      }
+
+      .contenido {
+        transform: none !important;
+      }
+
+      .frente, .trasera {
+        position: static;
+        transform: none;
+        height: auto;
+        box-shadow: none;
+      }
+
+      .frente img {
+        height: auto;
+      }
+
+      .trasera {
+        padding: 10px 0;
+        background: none;
+        border-top: 1px solid #ccc;
+      }
+
+      .tarjeta:hover .contenido {
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
 
+<h1>CATÁLOGO DE PECES MAYO 2025</h1>
+
+<div class="contenedor">
+
+  
 <!-- Tarjeta ejemplo para el Pez Betta -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/betta.jpg" alt="Pez Betta">
@@ -104,7 +155,7 @@
 <!-- Tarjetas tipo flip unificadas para peces -->
 
 <!-- 2. Guppy -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/guppy.jpg" alt="Guppy">
@@ -129,7 +180,7 @@
 </div>
 
 <!-- 4. Pez Ángel -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pezangel.jpg" alt="Pez Ángel">
@@ -154,7 +205,7 @@
 </div>
 
 <!-- 8. Tetra Cardenal -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/tetra_cardenal.jpg" alt="Tetra Cardenal">
@@ -179,7 +230,7 @@
 </div>
 
 <!-- 9. Tetra Neón -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/tetra_neon.jpg" alt="Tetra Neón">
@@ -204,7 +255,7 @@
 </div>
 
 <!-- 18. Otocinclus -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/otocinclus.jpg" alt="Otocinclus">
@@ -229,7 +280,7 @@
 </div>
 
 <!-- 19. Goldfish -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez/goldfish.jpg" alt="Goldfish">
@@ -254,7 +305,7 @@
 </div>
 
 <!-- 21. Gurami -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez/gurami.jpg" alt="Gurami">
@@ -279,7 +330,7 @@
 </div>
 
 <!-- 24. Pez Espada -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez_espada.jpg" alt="Pez Espada">
@@ -304,7 +355,7 @@
 </div>
 
 <!-- 25. Pez Koi -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez_koi.jpg" alt="Pez Koi">
@@ -329,7 +380,7 @@
 </div>
 
 <!-- 27. Platy -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/platy.jpg" alt="Platy">
@@ -354,7 +405,7 @@
 </div>
 
 <!-- 28. Pez gato -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez_gato.jpg" alt="Pez gato">
@@ -379,7 +430,7 @@
 </div>
 
 <!-- 29. Pez cebra -->
-<div class="tarjeta">
+<div class="tarjeta" onclick="this.classList.toggle('activa')">
   <div class="contenido">
     <div class="frente">
       <img src="imagenes/pez_cebra.png" alt="Pez cebra">
