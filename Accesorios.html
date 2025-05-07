@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accesorios - La Casa del Pez</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2196F3;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+
+    .producto {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      margin: 10px 0;
+    }
+
+    .producto p {
+      color: #555;
+      padding: 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Catálogo de Accesorios para Mascotas</h1>
+</header>
+
+<main class="catalogo">
+  <div class="producto">
+    <img src="img/comederos.jpg" alt="Comederos para cachorros">
+    <h3>Comederos</h3>
+    <p>Variedad de tamaños y materiales para cachorros.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/juguetes.jpg" alt="Juguetes para mascotas">
+    <h3>Juguetes</h3>
+    <p>Juguetes interactivos y masticables para todas las edades.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/correas.jpg" alt="Correas resistentes">
+    <h3>Correas</h3>
+    <p>Correas duraderas en diferentes estilos y colores.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/pecheras.jpg" alt="Pecheras ajustables">
+    <h3>Pecheras</h3>
+    <p>Pecheras ergonómicas y cómodas para paseos seguros.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/bozales.jpg" alt="Bozales para perros">
+    <h3>Bozales</h3>
+    <p>Seguridad y control en diferentes tamaños.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/peines.jpg" alt="Peines para mascotas">
+    <h3>Peines</h3>
+    <p>Cuida el pelaje de tu mascota con nuestros peines especiales.</p>
+  </div>
+
+  <div class="producto">
+    <img src="img/otros.jpg" alt="Otros accesorios">
+    <h3>Otros utensilios</h3>
+    <p>Desde dispensadores de bolsas hasta cepillos dentales.</p>
+  </div>
+</main>
+
+</body>
+</html>
