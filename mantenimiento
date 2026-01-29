@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento - La Casa del Pez y +</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.png" alt="Logo La Casa del Pez y +" class="logo">
+            <h1>La Casa del Pez y +</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="peces.html">Peces</a>
+            <a href="aves.html">Aves</a>
+            <a href="accesorios.html">Accesorios</a>
+            <a href="peceras.html">Peceras</a>
+            <a href="mantenimiento.html" class="active">Mantenimiento</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="grooming.html">Grooming</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h2><i class="fas fa-tools"></i> Servicios de Mantenimiento</h2>
+            <p class="subtitle">Mantenimiento profesional para peceras y acuarios</p>
+        </section>
+
+        <section class="services-section">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Cambios de Agua</h3>
+                    <p>Cambios parciales y completos con tratamiento adecuado del agua para mantener parámetros óptimos.</p>
+                    <ul class="service-features">
+                        <li>Control de pH, amoniaco y nitritos</li>
+                        <li>Uso de acondicionadores de agua</li>
+                        <li>Sifoneo de sustrato</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Limpieza de Filtros</h3>
+                    <p>Mantenimiento y reemplazo de medios filtrantes para asegurar filtración biológica y mecánica eficiente.</p>
+                    <ul class="service-features">
+                        <li>Limpieza de pre-filtros y esponjas</li>
+                        <li>Reemplazo de carbón activado</li>
+                        <li>Mantenimiento de bombas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Cuidado de Plantas</h3>
+                    <p>Podas, fertilización y control de algas para mantener un acuario plantado saludable y estético.</p>
+                    <ul class="service-features">
+                        <li>Podas de formación</li>
+                        <li>Fertilización líquida y en sustrato</li>
+                        <li>Control de algas no deseadas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Chequeos de Salud</h3>
+                    <p>Revisión de la salud de los peces, diagnóstico de enfermedades y tratamientos recomendados.</p>
+                    <ul class="service-features">
+                        <li>Observación de comportamiento</li>
+                        <li>Identificación de enfermedades comunes</li>
+                        <li>Recomendaciones de cuarentena</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <h3>Paquetes de Mantenimiento</h3>
+            <div class="pricing-table">
+                <div class="pricing-plan">
+                    <h4>Básico</h4>
+                    <div class="price">$150<span>/mes</span></div>
+                    <ul>
+                        <li>2 visitas mensuales</li>
+                        <li>Cambios de agua parciales</li>
+                        <li>Limpieza de cristales</li>
+                        <li>Chequeo de parámetros</li>
+                    </ul>
+                    <a href="contacto.html" class="plan-button">Contratar</a>
+                </div>
+                
+                <div class="pricing-plan featured">
+                    <h4>Estándar</h4>
+                    <div class="price">$250<span>/mes</span></div>
+                    <ul>
+                        <li>4 visitas mensuales</li>
+                        <li>Limpieza completa de filtro</li>
+                        <li>Cuidado de plantas</li>
+                        <li>Reporte mensual detallado</li>
+                        <li>Emergencias incluidas</li>
+                    </ul>
+                    <a href="contacto.html" class="plan-button featured-btn">Contratar</a>
+                </div>
+                
+                <div class="pricing-plan">
+                    <h4>Premium</h4>
+                    <div class="price">$400<span>/mes</span></div>
+                    <ul>
+                        <li>Visitas semanales</li>
+                        <li>Mantenimiento completo</li>
+                        <li>Asesoría en nuevas especies</li>
+                        <li>Descuentos en productos</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <a href="contacto.html" class="plan-button">Contratar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 La Casa del Pez y +. Todos los derechos reservados.</p>
+            <p>Dirección: [Tu dirección] | Teléfono: [Tu teléfono] | Email: [Tu email]</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
