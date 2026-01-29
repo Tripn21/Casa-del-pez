@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peceras - La Casa del Pez y +</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.png" alt="Logo La Casa del Pez y +" class="logo">
+            <h1>La Casa del Pez y +</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="peces.html">Peces</a>
+            <a href="aves.html">Aves</a>
+            <a href="accesorios.html">Accesorios</a>
+            <a href="peceras.html" class="active">Peceras</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="grooming.html">Grooming</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h2><i class="fas fa-fish"></i> Peceras y Acuarios</h2>
+            <p class="subtitle">Desde pequeñas peceras hasta grandes acuarios personalizados</p>
+        </section>
+
+        <section class="content-section">
+            <div class="peceras-types">
+                <div class="pecera-type">
+                    <div class="pecera-img">
+                        <img src="imagenes/peceras/pequena.jpg" alt="Peceras Pequeñas">
+                    </div>
+                    <div class="pecera-info">
+                        <h3>Peceras Pequeñas</h3>
+                        <p>Ideal para principiantes o espacios reducidos. Desde 5 hasta 30 litros. Perfectas para bettas, goldfish pequeños o camarones.</p>
+                        <ul>
+                            <li>Peceras de vidrio y acrílico</li>
+                            <li>Kits completos con filtro y luz</li>
+                            <li>Formas redondas, rectangulares y hexagonales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pecera-type">
+                    <div class="pecera-info">
+                        <h3>Acuarios Medianos</h3>
+                        <p>Para entusiastas intermedios. Desde 40 hasta 150 litros. Apropiados para comunidades de peces tropicales.</p>
+                        <ul>
+                            <li>Sistemas de filtración avanzada</li>
+                            <li>Iluminación LED programable</li>
+                            <li>Calentadores termostáticos</li>
+                        </ul>
+                    </div>
+                    <div class="pecera-img">
+                        <img src="imagenes/peceras/mediana.jpg" alt="Acuarios Medianos">
+                    </div>
+                </div>
+                
+                <div class="pecera-type">
+                    <div class="pecera-img">
+                        <img src="imagenes/peceras/grande.jpg" alt="Acuarios Grandes">
+                    </div>
+                    <div class="pecera-info">
+                        <h3>Acuarios Grandes y Personalizados</h3>
+                        <p>Para expertos o establecimientos comerciales. Desde 200 litros en adelante. Diseños a medida según sus necesidades.</p>
+                        <ul>
+                            <li>Acuarios de arrecife para corales</li>
+                            <li>Sistemas de CO2 para plantas</li>
+                            <li>Muebles y soportes especializados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3>¿Necesitas asesoría para elegir tu pecera?</h3>
+            <p>Nuestros expertos te ayudarán a seleccionar el tamaño y equipo adecuado para tus peces.</p>
+            <a href="contacto.html" class="cta-button">Contáctanos</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 La Casa del Pez y +. Todos los derechos reservados.</p>
+            <p>Dirección: [Tu dirección] | Teléfono: [Tu teléfono] | Email: [Tu email]</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
