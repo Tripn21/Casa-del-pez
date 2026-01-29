@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aves - La Casa del Pez y +</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.png" alt="Logo La Casa del Pez y +" class="logo">
+            <h1>La Casa del Pez y +</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="peces.html">Peces</a>
+            <a href="aves.html" class="active">Aves</a>
+            <a href="accesorios.html">Accesorios</a>
+            <a href="peceras.html">Peceras</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="grooming.html">Grooming</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h2><i class="fas fa-dove"></i> Aves y Accesorios</h2>
+            <p class="subtitle">Todo lo que necesitas para tus aves domésticas</p>
+        </section>
+
+        <section class="content-section">
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="imagenes/aves/canarios.jpg" alt="Canarios">
+                    <h3>Canarios</h3>
+                    <p>Variedades de canarios de canto, color y postura. Alimentos especializados y jaulas adecuadas.</p>
+                </div>
+                
+                <div class="category-card">
+                    <img src="imagenes/aves/loros.jpg" alt="Loros y Pericos">
+                    <h3>Loros y Pericos</h3>
+                    <p>Desde periquitos australianos hasta guacamayos. Juguetes, jaulas grandes y alimentos balanceados.</p>
+                </div>
+                
+                <div class="category-card">
+                    <img src="imagenes/aves/jaulas.jpg" alt="Jaulas y Accesorios">
+                    <h3>Jaulas y Accesorios</h3>
+                    <p>Jaulas de diferentes tamaños, comederos, bebederos, nidos y juguetes para estimulación.</p>
+                </div>
+                
+                <div class="category-card">
+                    <img src="imagenes/aves/alimentos.jpg" alt="Alimentos">
+                    <h3>Alimentos y Suplementos</h3>
+                    <p>Mezclas de semillas, pellets nutritivos, vitaminas y snacks saludables para todas las especies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h3><i class="fas fa-lightbulb"></i> Consejos para el cuidado de aves</h3>
+            <ul class="tips-list">
+                <li>Proporciona una jaula espaciosa adecuada al tamaño del ave</li>
+                <li>Ofrece una dieta variada y balanceada según la especie</li>
+                <li>Manten limpieza diaria de comederos y bebederos</li>
+                <li>Proporciona juguetes para estimulación mental</li>
+                <li>Consulta regularmente con un veterinario especializado</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 La Casa del Pez y +. Todos los derechos reservados.</p>
+            <p>Dirección: [Tu dirección] | Teléfono: [Tu teléfono] | Email: [Tu email]</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
